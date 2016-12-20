@@ -6,7 +6,7 @@
                         <hr class="intro-divider">
                         <ul class="list-inline intro-social-buttons">
                         <li>
-                                <a href="index.php?pg=kenari" class="btn btn-default btn-lg"></i> <span class="network-name">Kenari</span></a>
+                                <a href="pages/kenari.php" class="btn btn-default btn-lg"></i> <span class="network-name">Kenari</span></a>
                             </li>
                             <li>
                                 <a href='index.php?pg=login' class="btn btn-default btn-lg"></i> <span class="network-name">Login</span></a>

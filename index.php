@@ -91,12 +91,15 @@
 								
                                 if( !$_SESSION['login'] ) { 
                                     echo "<br>";   
+                                    
+                                    echo "<li><a href='index.php?pg=order'>Order</a></li>"; 
 									echo "<li><a href='index.php?pg=kenari'>Kenari</a></li>";
                                     echo "<li><a href='index.php?pg=cart'>View Cart</a></li>";
-									echo "<li><a href='index.php?pg=login'>Login</a></li>";  
+									echo "<li><a href='index.php?pg=login'>Login</a></li>"; 
 									echo "<li><a href='index.php?pg=daftar'>Daftar</a></li>";	 	                  
 								}
-                                else if( $_SESSION['login'] ) { 
+                                else if( $_SESSION['login'] ) {
+                                // button barang------------------------------ 
 								    if( $_SESSION['level'] == "admin") { 
                                     echo "<br />";  
                                     echo "<div class='col-lg-6'>";
@@ -107,6 +110,7 @@
                                       </button>";
                                       echo "<ul class='dropdown-menu' aria-labelledby='dropdownMenu1'>";
                                         echo "<li><a href='index.php?pg=tambahBarang'>Tambah Barang</a></li>";
+                                        // echo "<li><a href='index.php?pg=kenari'>Lihat Tampilan</a></li>";
                                         echo "<li><a href='index.php?pg=cart'>View Chart</a></li>";
                                         echo "<li><a href='index.php?pg=tabelBarang'>Tabel</a></li>";
                                         echo "<li role='separator' class='divider'></li>";
@@ -116,7 +120,7 @@
                                     echo "</div>";
 
 
-                                    //----------------------------------------------------
+                                    //button member----------------------------------------------------
                                     
                                       echo "<button class='btn btn-default dropdown-toggle' type='button' id='dropdownMenu1' data-toggle='dropdown' aria-haspopup='true' aria-expanded='true'>
                                         Member
@@ -124,7 +128,6 @@
                                       </button>";
                                       echo "<ul class='dropdown-menu' aria-labelledby='dropdownMenu1'>";
                                         echo "<li><a href='#'>Edit Member</a></li>";
-                                        echo "<li><a href='index.php?pg=viewCart'>Order</a></li>";
                                         echo "<li role='separator' class='divider'></li>";
                                         echo "<li><a href='#'>Hapus Member</a></li>";
                                         echo "<li><a href='index.php?pg=tabelMember'>View All</a></li>";
@@ -150,7 +153,6 @@
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
-        </div>
         <!-- /.container -->
     </nav>
 

@@ -7,7 +7,7 @@
           if(isset($_SESSION['cart'])) {
 
             $total = 0;
-            echo '<table class="table">';
+            echo '<center><table class="table">';
             echo '<tr>';
             echo '<th>Kode</th>';
             echo '<th>Nama</th>';
@@ -28,8 +28,8 @@
                 echo '<tr>';
                 echo '<td>'.$obj->barang_kode.'</td>';
                 echo '<td>'.$obj->nama_brg.'</td>';
-                echo '<td>'.$jumlah.'&nbsp;<a class="button [secondary success alert]" style="padding:5px;" href="index.php?pg=Uchart&id='.$kd_brg.'">+</a>&nbsp;<a class="button alert" style="padding:5px;" href="index.php?pg=URemove&id='.$kd_brg.'">-</a></td>';
-                echo '<td>'.$harga.'</td>';
+                echo '<td>'.$jumlah.'&nbsp;<a class="button [secondary success alert]" style="padding:5px;" href="pages/update-cart.php?action=add&kd_brg='.$kd_brg.'">+</a>&nbsp;<a class="button alert" style="padding:5px;" href="pages/update-cart.php?action=remove&kd_brg='.$kd_brg.'">-</a></td>';
+                echo '<td>'.$bayar.'</td>';
                 echo '</tr>';
               }
             }
@@ -44,19 +44,21 @@
           echo '</tr>';
 
           echo '<tr>';
-          echo '<td colspan="4" align="left"><a href="update-cart.php?action=empty" class="btn btn-default  "> <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Empty</a>&nbsp;<a href="index.php?pg=kenari" class="btn btn-info"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Continue Shopping</a>';
+          echo '<td colspan="4" align="left"><a href="pages/update-cart.php?action=empty" class="btn btn-default  "> <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Empty</a>&nbsp;<a href="index.php?pg=kenari" class="btn btn-info"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Continue Shopping</a>';
           
-          if(isset($_SESSION['login'])) {
-            echo '<a href="orders-update.php"><button class="btn btn-default" style="float:right;"><span class="class="btn btn-info"" aria-hidden="true"></span>COD</button></a>';
-          }
-
-          else {
-            echo '<a href="login.php"><button style="float:left;">Login</button></a>';
-          }
+          // if( $_SESSION['login'] ) { 
+          //   if( $_SESSION['level'] == "user") {
+              echo '<a href="orders-update.php"><button class="btn btn-default" style="float:right;">COD</button></a>';
+          //   }
+          // } 
+          // else {
+          //   echo '<a href="index.php?pg=login"><button class="btn btn-primary" style="float:right;">Login</button></a>';
+          // }
 
           echo '</td>';
 
           echo '</tr>';
+          echo '</center>';
           echo '</table>';
         }
 

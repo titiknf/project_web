@@ -3,15 +3,21 @@
 //if (session_status() !== PHP_SESSION_ACTIVE) {session_start();}
 if(session_id() == '' || !isset($_SESSION)){session_start();}
 
+$currency = 'Rp ';
+    $db_username = 'root';
+    $db_password = '';
+    $db_name = 'pet_city';
+    $db_host = 'localhost';
+    $mysqli = new mysqli($db_host, $db_username, $db_password,$db_name);
 
-$product_id = $_GET['kd_brg'];
+$kd_brg = $_GET['kd_brg'];
 $action = $_GET['action'];
 
 
 if($action === 'empty')
   unset($_SESSION['cart']);
 
-$result = $mysqli->query("SELECT jumlah FROM barang WHERE kd_brg = ".$product_id);
+$result = $mysqli->query("SELECT jumlah FROM barang WHERE kd_brg = ".$kd_brg);
 
 
 if($result){
@@ -39,6 +45,6 @@ if($result){
 
 
 
-header("location:index.php?pg=cart");
+header("location:../index.php?pg=cart");
 
 ?>

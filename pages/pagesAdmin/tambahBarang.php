@@ -5,6 +5,7 @@ mysql_select_db("pet_city")  or die("Gagal");
 if (!empty($_FILES["gambar"]["tmp_name"]))
 {
 	$nama_brg=$_POST['nama_brg'];
+    $barang_kode=$_POST['barang_kode'];
 	$kategori=$_POST['kategori'];
 	$deskripsi=$_POST['deskripsi'];
 	$harga=$_POST['harga'];
@@ -16,7 +17,7 @@ if (!empty($_FILES["gambar"]["tmp_name"]))
 	{			
 		$gambar = $namafolder . basename( md5( rand() . time() ) . "." . pathinfo( basename( $_FILES['gambar']['name'] ), PATHINFO_EXTENSION ) );		
 		if (move_uploaded_file($_FILES['gambar']['tmp_name'], $gambar)) {
-			$sql="insert into barang(kd_brg,nama_brg,kategori,deskripsi,harga,jumlah,diskon,judul_gambar,gambar) values ('','$nama_brg','$kategori','$deskripsi','$harga','$jumlah','$diskon','$judul_gambar','$gambar')";
+			$sql="insert into barang(kd_brg,barang_kode,nama_brg,kategori,deskripsi,harga,jumlah,diskon,judul_gambar,gambar) values ('','$nama_brg','$barang_kode','$kategori','$deskripsi','$harga','$jumlah','$diskon','$judul_gambar','$gambar')";
 			$res=mysql_query($sql) or die (mysql_error());
 			echo "<div class='alert alert-success' role='alert'><span class='glyphicon glyphicon-ok' aria-hidden='true'></span>
   <span class='sr-only'>Success:</span>Berhasil Menambahkan Barang</div>";
@@ -41,6 +42,9 @@ if (!empty($_FILES["gambar"]["tmp_name"]))
 		<form method="post" action="#" enctype="multipart/form-data" name="FUpload" id="FUpload" class="form-horizontal container-fluid">
             <div class="form-group">
                 <input type="text" name="nama_brg" class="form-control" placeholder="nama_brg" maxlength="16"/>
+            </div>
+            <div class="form-group">
+                <input type="text" name="barang_kode" class="form-control" placeholder="Kode Barang" maxlength="16"/>
             </div>
             <div class="form-group">
                 <input type="text" name="kategori" class="form-control" placeholder="Kategori" maxlength="20"/>
