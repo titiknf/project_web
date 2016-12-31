@@ -17,7 +17,7 @@ if (!empty($_FILES["gambar"]["tmp_name"]))
 	{			
 		$gambar = $namafolder . basename( md5( rand() . time() ) . "." . pathinfo( basename( $_FILES['gambar']['name'] ), PATHINFO_EXTENSION ) );		
 		if (move_uploaded_file($_FILES['gambar']['tmp_name'], $gambar)) {
-			$sql="insert into barang(kd_brg,barang_kode,nama_brg,kategori,deskripsi,harga,jumlah,diskon,judul_gambar,gambar) values ('','$nama_brg','$barang_kode','$kategori','$deskripsi','$harga','$jumlah','$diskon','$judul_gambar','$gambar')";
+			$sql="insert into barang(kd_brg,barang_kode,nama_brg,kategori,deskripsi,harga,jumlah,diskon,judul_gambar,gambar) values ('','$barang_kode','$nama_brg','$kategori','$deskripsi','$harga','$jumlah','$diskon','$judul_gambar','$gambar')";
 			$res=mysql_query($sql) or die (mysql_error());
 			echo "<div class='alert alert-success' role='alert'><span class='glyphicon glyphicon-ok' aria-hidden='true'></span>
   <span class='sr-only'>Success:</span>Berhasil Menambahkan Barang</div>";
@@ -47,10 +47,10 @@ if (!empty($_FILES["gambar"]["tmp_name"]))
                 <input type="text" name="barang_kode" class="form-control" placeholder="Kode Barang" maxlength="16"/>
             </div>
             <div class="form-group">
-                <input type="text" name="kategori" class="form-control" placeholder="Kategori" maxlength="20"/>
+                <input type="text" name="kategori" class="form-control" placeholder="Umur" maxlength="20"/>
             </div>
             <div class="form-group">
-                <input type="text" name="deskripsi" class="form-control" placeholder="Deskripsi" maxlength="20"/>
+                <input type="text" name="deskripsi" class="form-control" placeholder="Deskripsi" maxlength="255" />
             </div>
             <div class="form-group">
                 <input type="text" name="harga" class="form-control" placeholder="harga" maxlength="255"/>
@@ -58,14 +58,14 @@ if (!empty($_FILES["gambar"]["tmp_name"]))
             <div class="form-group">
                 <input type="text" name="jumlah" class="form-control" placeholder="jumlah" maxlength="255"/>
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <input type="text" name="diskon" class="form-control" placeholder="Diskon" maxlength="255"/>
-            </div>
+            </div> -->
 			<div class="form-group">
                 <input type="text" name="judul_gambar" class="form-control" placeholder="Judul Gambar" maxlength="255"/>
             </div>
 			<div class="form-group">
-                <input type="file" name="gambar" class="form-control" placeholder="Judul Gambar" maxlength="255" style="padding-bottom:1%;"/>
+                <input type="file" name="gambar" class="form-control" placeholder="Judul Gambar" maxlength="255" style="padding-bottom:10%;"/>
             </div>
             
             <div class="form-group">

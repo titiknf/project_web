@@ -1617,6 +1617,7 @@ pre code {
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
+  color: #34d1b2;
 }
 .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
   float: left;
@@ -1777,6 +1778,7 @@ pre code {
 @media (min-width: 768px) {
   .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
     float: left;
+    color: #34d1b2;
   }
   .col-sm-12 {
     width: 100%;
@@ -1804,6 +1806,7 @@ pre code {
   }
   .col-sm-4 {
     width: 33.33333333%;
+    color: #34d1b2;
   }
   .col-sm-3 {
     width: 25%;
@@ -2969,6 +2972,7 @@ select[multiple].input-lg {
   padding-top: 7px;
   margin-top: 0;
   margin-bottom: 0;
+  color: #34d1b2;
 }
 .form-horizontal .radio,
 .form-horizontal .checkbox {

@@ -28,7 +28,9 @@
                 echo '<tr>';
                 echo '<td>'.$obj->barang_kode.'</td>';
                 echo '<td>'.$obj->nama_brg.'</td>';
-                echo '<td>'.$jumlah.'&nbsp;<a class="button [secondary success alert]" style="padding:5px;" href="pages/update-cart.php?action=add&kd_brg='.$kd_brg.'">+</a>&nbsp;<a class="button alert" style="padding:5px;" href="pages/update-cart.php?action=remove&kd_brg='.$kd_brg.'">-</a></td>';
+                echo '<td>'.$jumlah.'&nbsp;
+                  <a class="btn btn-default" style="padding:5px;" href="pages/update-cart.php?action=add&kd_brg='.$kd_brg.' ">+</a>&nbsp;
+                  <a class="btn btn-default" style="padding:5px;" href="pages/update-cart.php?action=remove&kd_brg='.$kd_brg.'">-</a></td>';
                 echo '<td>'.$bayar.'</td>';
                 echo '</tr>';
               }
@@ -46,14 +48,14 @@
           echo '<tr>';
           echo '<td colspan="4" align="left"><a href="pages/update-cart.php?action=empty" class="btn btn-default  "> <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Empty</a>&nbsp;<a href="index.php?pg=kenari" class="btn btn-info"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Continue Shopping</a>';
           
-          // if( $_SESSION['login'] ) { 
-          //   if( $_SESSION['level'] == "user") {
-              echo '<a href="orders-update.php"><button class="btn btn-default" style="float:right;">COD</button></a>';
-          //   }
-          // } 
-          // else {
-          //   echo '<a href="index.php?pg=login"><button class="btn btn-primary" style="float:right;">Login</button></a>';
-          // }
+          if( $_SESSION['login'] ) { 
+            if( $_SESSION['level'] == "user") {
+              echo '<a href="index.php?pg=perbaruiPesanan"><button class="btn btn-default" style="float:right;"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>  COD</button></a>';
+            }
+          } 
+          else {
+            echo '<a href="index.php?pg=login"><button class="btn btn-primary" style="float:right;"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Login</button></a>';
+          }
 
           echo '</td>';
 

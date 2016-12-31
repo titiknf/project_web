@@ -26,7 +26,7 @@ h6 {
 }
 
 .lead {
-    font-size: 18px;
+    font-size: 30px;
     font-weight: 400;
 }
 
@@ -36,7 +36,8 @@ h6 {
     text-align: center;
     color: #black;
 	list-style-image:url(../../Unnamed%20Site%204/logo.png);
-	background-color: #FF8473;
+	background-color: #FF9840;
+    /*#FF8473;ini merah jambu*/
     background-size: cover;
 }
 

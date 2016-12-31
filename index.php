@@ -51,7 +51,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Pet City</title>
+    <title>Ken City</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -80,7 +80,18 @@
         <div class="container topnav">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <a class="navbar-brand topnav" href="index.php?pg=home"><h1>Pet City<h1></a>
+                <?php if ( !$_SESSION['login']){
+                    echo "<a class='navbar-brand topnav' href='index.php?pg=home'><h1>Ken City<h1></a>"; 
+                    } 
+                    else if( $_SESSION['login'] ) {
+                        if( $_SESSION['level'] == "user") { 
+                        echo "<a class='navbar-brand topnav'  href='index.php?pg=homeMember'><h1>Ken City<h1></a>";  
+                        }  
+                        else if( $_SESSION['level'] == "admin") {
+                        echo "<h1><a class='navbar-brand topnav'  href='index.php?pg=homeAdmin'><h1>Ken City<h1></a><h1>";
+                        }
+                    }
+                        ?>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -92,8 +103,9 @@
                                 if( !$_SESSION['login'] ) { 
                                     echo "<br>";   
                                     
-                                    echo "<li><a href='index.php?pg=order'>Order</a></li>"; 
+                                    
 									echo "<li><a href='index.php?pg=kenari'>Kenari</a></li>";
+                                    echo "<li><a href='index.php?pg=caraPemesanan'>Cara Pembelian</a></li>";
                                     echo "<li><a href='index.php?pg=cart'>View Cart</a></li>";
 									echo "<li><a href='index.php?pg=login'>Login</a></li>"; 
 									echo "<li><a href='index.php?pg=daftar'>Daftar</a></li>";	 	                  
@@ -101,6 +113,7 @@
                                 else if( $_SESSION['login'] ) {
                                 // button barang------------------------------ 
 								    if( $_SESSION['level'] == "admin") { 
+                                    echo "<br />"; 
                                     echo "<br />";  
                                     echo "<div class='col-lg-6'>";
                                     echo "<div class='dropdown'>";
@@ -111,10 +124,10 @@
                                       echo "<ul class='dropdown-menu' aria-labelledby='dropdownMenu1'>";
                                         echo "<li><a href='index.php?pg=tambahBarang'>Tambah Barang</a></li>";
                                         // echo "<li><a href='index.php?pg=kenari'>Lihat Tampilan</a></li>";
-                                        echo "<li><a href='index.php?pg=cart'>View Chart</a></li>";
+                                        // echo "<li><a href='index.php?pg=cart'>View Chart</a></li>";
                                         echo "<li><a href='index.php?pg=tabelBarang'>Tabel</a></li>";
                                         echo "<li role='separator' class='divider'></li>";
-                                        echo "<li><a href='#'>Pesanan</a></li>";
+                                        echo "<li><a href='index.php?pg=kenari'>Lihat tampilan</a></li>";
                                       echo "</ul>"; 
                                     echo "</div>";
                                     echo "</div>";
@@ -127,11 +140,12 @@
                                         <span class='caret'></span>
                                       </button>";
                                       echo "<ul class='dropdown-menu' aria-labelledby='dropdownMenu1'>";
-                                        echo "<li><a href='#'>Edit Member</a></li>";
-                                        echo "<li role='separator' class='divider'></li>";
-                                        echo "<li><a href='#'>Hapus Member</a></li>";
-                                        echo "<li><a href='index.php?pg=tabelMember'>View All</a></li>";
-                                        echo "<li><a href='index.php?pg=logout'><span class = 'glyphicon glyphicon-log-out'>&nbsp;Logout</span></a></li>";
+                                        // echo "<li><a href='#'>Edit Member</a></li>";
+                                       echo "<li><a href='index.php?pg=tabelMember'>Data Member</a></li>";
+                                       echo "<li><a href='index.php?pg=tabelOrder'>Data Order</a></li>";
+                                       echo "<li role='separator' class='divider'></li>";
+                                       // echo "<li><a href='#'>Hapus Member</a></li>";
+                                       echo "<li><a href='index.php?pg=logout'><span class = 'glyphicon glyphicon-log-out'>&nbsp;Logout</span></a></li>";
                                       echo "</ul>";
 
                                     echo "</div>";
@@ -139,9 +153,13 @@
                                     }
                                     
                                     else if( $_SESSION['level'] == "user") { 
+                                        echo '<br>';
+                                        // echo "<li><a href='index.php?pg=myOrder'>My Order</a></li>"; 
                                         echo "<li><a href='index.php?pg=kenari'>Kenari</a></li>";
+                                        echo "<li><a href='index.php?pg=caraPemesanan'>Cara Pembelian</a></li>";
                                         echo "<li><a href='index.php?pg=cart'>View Cart</a></li>";
-                                        echo "<li><a href='index.php?pg=logout'><span class = 'glyphicon glyphicon-log-out'>&nbsp;Logout</span></a></li>";
+                                        echo "<li><a href='index.php?pg=editAkun'>My Profile</a></li>";
+                                        echo "<li><a href='index.php?pg=logout'><span class = 'glyphicon glyphicon-log-out'></span> Logout</a></li>";
 
                                     }
                                 }
@@ -213,8 +231,47 @@
                     else if ( $page == "homeMember"){
                         include "pages/homeMember.php";
                     }
-                    else if ( $page == "updateCart"){
-                        include "pages/update-cart.php";
+                    else if ( $page == "perbaruiPesanan"){
+                        include "pages/perbaruiPesanan.php";
+                    }
+                    else if ( $page == "suksesPesan"){
+                        include "pages/suksesPesan.php";
+                    }
+                    else if ( $page == "editAkun"){
+                        include "pages/editAkun.php";
+                    }
+                    else if ( $page == "invoice"){
+                        include "pages/invoice.php";
+                    }
+                    else if ( $page == "updateAkun"){
+                        include "pages/updateAkun.php";
+                    }
+                    else if ( $page == "homeAdmin"){
+                        include "pages/homeAdmin.php";
+                    }
+                    else if ( $page == "editBarang"){
+                        include "pages/pagesAdmin/editBarang.php";
+                    }
+                    else if ( $page == "updateBarang"){
+                        include "pages/pagesAdmin/updateBarang.php";
+                    }
+                    else if ( $page == "myOrder"){
+                        include "pages/myOrder.php";
+                    }
+                    else if ( $page == "tabelOrder"){
+                        include "pages/pagesAdmin/tabelOrder.php";
+                    }
+                    else if ( $page == "formCari"){
+                        include "pages/formCari.php";
+                    }
+                    else if ( $page == "caraPemesanan"){
+                        include "pages/caraPemesanan.php";
+                    }
+                    else if ( $page == "kirimOrder"){
+                        include "pages/pagesAdmin/kirimOrder.php";
+                    }
+                    else if ( $page == "updateMember"){
+                        include "pages/pagesAdmin/updateMember.php";
                     }
 				?>
 

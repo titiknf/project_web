@@ -29,10 +29,10 @@
 								<td  rowspan="6" width="285"><img src="<?php echo $data['gambar']; ?>" alt="" width="100%" class="img-responsive" /></td>
 								<td width="72">Kode Barang	</td>
 								<td width="59" >:</td>
-								<td width="235" ><?php echo $data['kd_brg']; ?></td>
+								<td width="235" ><?php echo $data['barang_kode']; ?></td>
 							</tr>
 								<tr>
-									<td>Kategori	</td><td>:</td><td><?php echo $data['kategori']; ?></td>
+									<td>Umur	</td><td>:</td><td><?php echo $data['kategori']; ?></td>
 								</tr>
 								<tr>
 									<td>Deskripsi	</td><td>:</td><td><?php echo $data['deskripsi']; ?></td>
@@ -41,10 +41,7 @@
 									<td>jumlah	</td><td>:</td><td><?php echo $data['jumlah']; ?></td>
 								</tr>
 								<tr>
-									<td>Harga	</td><td>:</td><td><?php echo $data['harga']; ?></td>	
-								</tr>
-								<tr>
-									<td>Diskon	</td><td>:</td><td><?php echo $data['diskon']; ?></td>
+									<td>Harga	</td><td>:</td><td>Rp <?php echo $data['harga']; ?></td>	
 								</tr>
 							</table>
 

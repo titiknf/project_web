@@ -1,3 +1,4 @@
+
 <style>
 .product_box {
     float: left;
@@ -37,13 +38,12 @@
 
 
             <div class="col-lg-19 text-center">
-                   
+                  
             </div>
             <br>
             <br>
             <br>
-            
-             <?php
+                <?php
                     if( isset( $_GET['hal'] ) ) {
                         $jum = ( $_GET['hal'] - 1 ) * 6;
                         $limit = "LIMIT $jum, 6";
@@ -53,10 +53,11 @@
                         $limit = "LIMIT 0, 6";
                         $otp = 1;
                     }
+                    $input_cari= $_POST['input_cari']; //get the nama value from form
                     $i=0;
                     $product_id = array();
                     $product_quantity = array();
-                    $result = $mysqli->query("SELECT * FROM barang $limit");
+                    $result = $mysqli->query("SELECT * FROM barang where nama_brg like '%$input_cari%' $limit");
                     if($result === FALSE){
                       die(mysql_error());
                     }
@@ -85,6 +86,11 @@
                             echo '</div>';
                             echo '</div>';
                         }
+
+                        
+                    }
+                    else {
+                        echo "<h3>no result back to <a href='index.php?pg=kenari'>kenari </a></h1>";
                     }
                     ?>
 
@@ -110,4 +116,3 @@
         ?>
 
 
-   

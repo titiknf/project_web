@@ -26,7 +26,7 @@
 							$telp = $_POST['txtTelepon'];
 							$level = "user";  
 							
-							$query = "insert into member(id,nama,password,gender,email,alamat,kodepos,kota,telp,level) values ('','$nama','$password','$gender','$email','$alamat','$kodepos','$kota','$telp','$level')";
+							$query = "insert into member(id_member,nama,password,gender,email,alamat,kodepos,kota,telp,level) values ('','$nama','$password','$gender','$email','$alamat','$kodepos','$kota','$telp','$level')";
 							$simpan_query=mysql_query($query);
 							
 								if( $simpan_query ) {
