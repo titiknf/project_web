@@ -1,3 +1,6 @@
+<br>
+<br>
+<br>
 <?php
 $namafolder="img/"; //tempat menyimpan file
 $con=mysql_connect("localhost","root","") or die("Gagal");
@@ -10,14 +13,13 @@ if (!empty($_FILES["gambar"]["tmp_name"]))
 	$deskripsi=$_POST['deskripsi'];
 	$harga=$_POST['harga'];
 	$jumlah=$_POST['jumlah'];
-	$diskon=$_POST['diskon'];
 	$jenis_gambar=$_FILES['gambar']['type'];
 	$judul_gambar=$_POST['judul_gambar'];
 	if($jenis_gambar=="image/jpeg" || $jenis_gambar=="image/jpg" || $jenis_gambar=="image/gif" || $jenis_gambar=="image/png")
 	{			
 		$gambar = $namafolder . basename( md5( rand() . time() ) . "." . pathinfo( basename( $_FILES['gambar']['name'] ), PATHINFO_EXTENSION ) );		
 		if (move_uploaded_file($_FILES['gambar']['tmp_name'], $gambar)) {
-			$sql="insert into barang(kd_brg,barang_kode,nama_brg,kategori,deskripsi,harga,jumlah,diskon,judul_gambar,gambar) values ('','$barang_kode','$nama_brg','$kategori','$deskripsi','$harga','$jumlah','$diskon','$judul_gambar','$gambar')";
+			$sql="insert into barang(kd_brg,barang_kode,nama_brg,kategori,deskripsi,harga,jumlah,judul_gambar,gambar) values ('','$barang_kode','$nama_brg','$kategori','$deskripsi','$harga','$jumlah','$judul_gambar','$gambar')";
 			$res=mysql_query($sql) or die (mysql_error());
 			echo "<div class='alert alert-success' role='alert'><span class='glyphicon glyphicon-ok' aria-hidden='true'></span>
   <span class='sr-only'>Success:</span>Berhasil Menambahkan Barang</div>";

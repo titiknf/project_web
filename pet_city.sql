@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 21, 2016 at 05:01 AM
+-- Generation Time: Jan 01, 2017 at 07:32 AM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -39,40 +39,16 @@ CREATE TABLE IF NOT EXISTS `barang` (
   `gambar` varchar(225) NOT NULL,
   `barang_tanggal` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`kd_brg`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=21 ;
 
 --
 -- Dumping data for table `barang`
 --
 
 INSERT INTO `barang` (`barang_kode`, `kd_brg`, `nama_brg`, `kategori`, `deskripsi`, `harga`, `jumlah`, `diskon`, `judul_gambar`, `gambar`, `barang_tanggal`) VALUES
-('KNR-nit', 8, 'Kenari 1', 'k', 'little little', 100000.00, 85, 0, 'Kenari 1', 'img/1e289135b6a33c73aaa068f7ae2d8f93.jpg', '2016-12-21 03:59:47'),
-('KNR3', 9, 'Kenari 2', 'Bertarung', 'Cepat', 700000.00, 83, 0, 'Kenari 2', 'img/cd30485f7108819120be0aa3fe9acc73.jpg', '2016-12-21 03:59:47'),
-('', 11, 'kenari 101', 'nothing', 'just try', 90000.00, 0, 0, 'kenari 4', 'img/33e7b0fc441cbb916b281f5233c26dba.jpg', '0000-00-00 00:00:00'),
-('Kenari 90', 12, '098', 'kiloan', 'just try', 90000.00, 20, 0, 'kenari 90', 'img/54790a2d4def735ac68a369a3fdfc341.png', '0000-00-00 00:00:00'),
-('jikaaku', 13, 'bukan kamu', 'ku berherhenti', 'melupakanmu', 90000.00, 0, 0, 'jika ak', 'img/f80ba51fa1ee2f028f27f5974894472f.png', '0000-00-00 00:00:00');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `login`
---
-
-CREATE TABLE IF NOT EXISTS `login` (
-  `idpelanggan` int(20) NOT NULL AUTO_INCREMENT,
-  `nama` varchar(25) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `password` varchar(10) NOT NULL,
-  PRIMARY KEY (`idpelanggan`),
-  KEY `idpelanggan` (`idpelanggan`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
-
---
--- Dumping data for table `login`
---
-
-INSERT INTO `login` (`idpelanggan`, `nama`, `email`, `password`) VALUES
-(1, '', '', '');
+('NRW1', 15, 'Norwich', '1bulan', 'paruh pendek, punggung lebar dan pendek, sayap dan ekor pendek', 3000000.00, 11, 0, 'Ken Norwich', 'img/3346f5d5c2a5a4aeb136a66f3c4ebd37.jpg', '2016-12-31 07:00:44'),
+('YKR1', 16, 'Yorkshire', '2 bulan', 'ekor panjang, paruh panjang, bulu kuning', 2000000.00, 0, 0, 'Yorkshire', 'img/6d30dc0358ced9d5a2da89c6922e86d6.jpg', '2016-12-30 09:56:16'),
+('BDR1', 20, 'Border', '2 bulan', 'badan bulat', 2000000.00, 3, 0, 'keanri border', 'img/8a101699008dc95d6fde090e27a0fcc4.jpg', '2016-12-31 13:13:18');
 
 -- --------------------------------------------------------
 
@@ -92,18 +68,22 @@ CREATE TABLE IF NOT EXISTS `member` (
   `level` enum('user','admin') NOT NULL,
   `password` varchar(10) NOT NULL,
   PRIMARY KEY (`id_member`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=23 ;
 
 --
 -- Dumping data for table `member`
 --
 
 INSERT INTO `member` (`id_member`, `nama`, `gender`, `email`, `alamat`, `kodepos`, `kota`, `telp`, `level`, `password`) VALUES
-(2, 'faid', 'P', 'faid@gmail.com', 'malang', '98078', 'malang', '03418983', 'admin', 'faid'),
+(2, 'titik try change', 'P', 'faid@gmail.com', 'malang', '98078', 'malang', '03418983', 'admin', 'faid'),
 (3, 'admin', 'L', 'admin.com', 'admin', '8888', 'admin', '8923', 'admin', 'admin'),
-(12, 'titik', 'P', 'titik@mail', 'malang', '898', 'malang', '09084', 'user', 'titik'),
+(12, 'Titik N', 'P', 'titik@gmail.com', 'malang', '898', 'malang', '09084', 'admin', 'titik'),
 (17, 'masak sih', 'P', 'tiyur@mail', 'malang', '9234', 'malang', '09234', 'user', 'tiyur'),
-(18, 'user1', 'P', 'user1@gmail.com', 'm', '9', 'm', '9', 'user', 'user1');
+(18, 'user1', 'P', 'user1@gmail.com', 'm', '9', 'm', '9', 'user', 'user1'),
+(19, 'angkara', 'P', 'angkara@gmail.com', 'Jl.Merjosari no.54 - Malang - indonesia', '676431', 'Malang', '081252676312', 'user', 'angkara'),
+(20, 'tweenorubah', 'P', 't@mail', 'malang', '67543', 'malang', '098776543', 'user', 'tweeno'),
+(21, 'manisku', 'P', 'manisku@gmail.com', 'malang', '987654', 'malang', '923749387', 'user', 'manisku'),
+(22, 'dina', 'P', 'dina@gmail.com', 'malang', '99876', 'malang', '098766544', 'user', 'dina');
 
 -- --------------------------------------------------------
 
@@ -121,41 +101,43 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `total` int(15) NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `email` varchar(100) NOT NULL,
+  `status_orders` varchar(50) NOT NULL,
   PRIMARY KEY (`id_orders`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=28 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=47 ;
 
 --
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`id_orders`, `barang_kode`, `nama_brg`, `deskripsi`, `harga`, `unit`, `total`, `date`, `email`) VALUES
-(1, 'KNR3', 'Kenari 2', 'Cepat', 700000, 1, 700000, '2016-12-20 06:59:47', 'sjobs@apple.com'),
-(2, 'KNR3', 'Kenari 2', 'Cepat', 700000, 1, 700000, '2016-12-20 07:08:18', ''),
-(3, '', 'kenari 101', 'just try', 90000, 2, 180000, '2016-12-20 07:08:18', ''),
-(4, '', 'kenari 101', 'just try', 90000, 1, 90000, '2016-12-20 07:15:54', ''),
-(5, 'KNR4', 'Kenari 1', 'little little', 100000, 1, 100000, '2016-12-20 07:20:34', '1'),
-(6, 'KNR4', 'Kenari 1', 'little little', 100000, 1, 100000, '2016-12-20 07:24:59', '1'),
-(7, 'KNR3', 'Kenari 2', 'Cepat', 700000, 1, 700000, '2016-12-20 16:20:24', '1'),
-(8, 'KNR3', 'Kenari 2', 'Cepat', 700000, 1, 700000, '2016-12-20 16:27:39', '1'),
-(9, 'KNR3', 'Kenari 2', 'Cepat', 700000, 1, 700000, '2016-12-20 16:29:28', ''),
-(10, 'KNR3', 'Kenari 2', 'Cepat', 700000, 1, 700000, '2016-12-20 16:31:33', ''),
-(11, 'KNR3', 'Kenari 2', 'Cepat', 700000, 1, 700000, '2016-12-20 16:32:38', ''),
-(12, 'KNR3', 'Kenari 2', 'Cepat', 700000, 1, 700000, '2016-12-20 16:34:00', '1'),
-(13, 'KNR3', 'Kenari 2', 'Cepat', 700000, 1, 700000, '2016-12-20 16:44:07', '1'),
-(14, '', 'kenari 101', 'just try', 90000, 1, 90000, '2016-12-20 17:31:55', '1'),
-(15, 'KNR3', 'Kenari 2', 'Cepat', 700000, 1, 700000, '2016-12-20 18:05:13', ''),
-(16, '', 'kenari 101', 'just try', 90000, 1, 90000, '2016-12-20 18:05:51', ''),
-(17, 'KNR3', 'Kenari 2', 'Cepat', 700000, 1, 700000, '2016-12-20 18:06:57', 'titik'),
-(18, '', 'kenari 101', 'just try', 90000, 1, 90000, '2016-12-20 18:45:59', 'tiyur@mail'),
-(19, 'KNR4', 'Kenari 1', 'little little', 100000, 2, 200000, '2016-12-20 19:02:05', 'tiyur@mail'),
-(20, 'KNR3', 'Kenari 2', 'Cepat', 700000, 1, 700000, '2016-12-20 19:02:05', 'tiyur@mail'),
-(21, '', 'kenari 101', 'just try', 90000, 2, 180000, '2016-12-21 00:03:53', 'titik@mail'),
-(22, 'KNR3', 'Kenari 2', 'Cepat', 700000, 1, 700000, '2016-12-21 00:34:40', 'titik@mail'),
-(23, 'KNR3', 'Kenari 2', 'Cepat', 700000, 1, 700000, '2016-12-21 00:46:54', 'titik@mail'),
-(24, 'KNR3', 'Kenari 2', 'Cepat', 700000, 1, 700000, '2016-12-21 01:03:18', 'titik@mail'),
-(25, 'KNR3', 'Kenari 2', 'Cepat', 700000, 2, 1400000, '2016-12-21 02:23:37', 'user1@gmail.com'),
-(26, 'KNR3', 'Kenari 2', 'Cepat', 700000, 2, 1400000, '2016-12-21 03:59:47', 'titik@mail'),
-(27, 'KNR-nit', 'Kenari 1', 'little little', 100000, 2, 200000, '2016-12-21 03:59:47', 'titik@mail');
+INSERT INTO `orders` (`id_orders`, `barang_kode`, `nama_brg`, `deskripsi`, `harga`, `unit`, `total`, `date`, `email`, `status_orders`) VALUES
+(1, 'KNR3', 'Kenari 2', 'Cepat', 700000, 1, 700000, '2016-12-20 06:59:47', 'sjobs@apple.com', 'lunas/terkirim'),
+(19, 'KNR4', 'Kenari 1', 'little little', 100000, 2, 200000, '2016-12-20 19:02:05', 'tiyur@mail', 'Lunas/Terkirim'),
+(20, 'KNR3', 'Kenari 2', 'Cepat', 700000, 1, 700000, '2016-12-20 19:02:05', 'tiyur@mail', 'Lunas/Terkirim'),
+(22, 'KNR3', 'Kenari 2', 'Cepat', 700000, 1, 700000, '2016-12-21 00:34:40', 'titik@mail', 'Lunas/Terkirim'),
+(23, 'KNR3', 'Kenari 2', 'Cepat', 700000, 1, 700000, '2016-12-21 00:46:54', 'titik@mail', ''),
+(24, 'KNR3', 'Kenari 2', 'Cepat', 700000, 1, 700000, '2016-12-21 01:03:18', 'titik@mail', ''),
+(25, 'KNR3', 'Kenari 2', 'Cepat', 700000, 2, 1400000, '2016-12-21 02:23:37', 'user1@gmail.com', ''),
+(26, 'KNR3', 'Kenari 2', 'Cepat', 700000, 2, 1400000, '2016-12-21 03:59:47', 'titik@mail', ''),
+(27, 'KNR-nit', 'Kenari 1', 'little little', 100000, 2, 200000, '2016-12-21 03:59:47', 'titik@mail', ''),
+(28, 'KNR-nit', 'Kenari 1', 'little little', 100000, 2, 200000, '2016-12-21 06:02:07', 'titik@mail', ''),
+(29, 'KNR3', 'Kenari 2', 'Cepat', 700000, 2, 1400000, '2016-12-21 06:02:07', 'titik@mail', ''),
+(30, 'KNR3', 'Kenari 2', 'Cepat', 700000, 1, 700000, '2016-12-22 00:11:30', 'titik@mail', ''),
+(31, 'KNR3', 'Kenari 2', 'Cepat', 700000, 1, 700000, '2016-12-22 00:25:01', 'titik@mail', ''),
+(32, 'KNR3', 'Kenari 2', 'Cepat', 700000, 1, 700000, '2016-12-22 01:49:58', 'titik@mail', ''),
+(33, 'KENARI 1', 'KNR1', 'berbulu kunig', 9000000, 1, 9000000, '2016-12-22 03:52:33', 'titik@mail', ''),
+(34, 'KENARI 1', 'KNR1', 'berbulu kunig', 9000000, 1, 9000000, '2016-12-22 04:01:00', 'angkara@gmail.com', ''),
+(35, 'KENARI 1', 'KNR1', 'berbulu kunig', 9000000, 1, 9000000, '2016-12-26 01:26:03', 'titik@mail', ''),
+(36, 'KENARI 1', 'KNR1', 'berbulu kunig', 9000000, 2, 18000000, '2016-12-27 02:08:24', 'titik@mail', ''),
+(37, 'KENARI 1', 'KNR1', 'berbulu kunig', 9000000, 1, 9000000, '2016-12-27 02:27:03', 'titik@mail', ''),
+(38, 'KENARI 1', 'KNR1', 'berbulu kunig', 9000000, 3, 27000000, '2016-12-27 04:01:52', 'tweeno@mail', ''),
+(39, 'KENARI 1', 'KNR1', 'berbulu kunig', 9000000, 3, 27000000, '2016-12-27 05:18:51', 'manisku@gmail.com', ''),
+(40, 'Kenari  No', 'Nor1', 'paruh pendek, punggung lebar dan pendek, sayap dan ekor pendek', 3000000, 1, 3000000, '2016-12-27 05:39:54', 'manisku@gmail.com', ''),
+(41, 'KENARI 1', 'KNR1', 'berbulu kunig', 9000000, 2, 18000000, '2016-12-27 05:39:54', 'manisku@gmail.com', ''),
+(42, 'Kenari  No', 'Nor1', 'paruh pendek, punggung lebar dan pendek, sayap dan ekor pendek', 3000000, 1, 3000000, '2016-12-27 05:56:56', 'manisku@gmail.com', ''),
+(43, 'KENARI 1', 'KNR1', 'berbulu kunig', 9000000, 1, 9000000, '2016-12-27 14:47:37', 'dina@gmail.com', ''),
+(44, 'YKR', 'Yorkrshire', 'ekor panjang, paruh panjang, bulu kuning', 2000000, 1, 2000000, '2016-12-27 14:47:37', 'dina@gmail.com', ''),
+(45, 'YKR1', 'Yorkshire', 'ekor panjang, paruh panjang, bulu kuning', 2000000, 2, 4000000, '2016-12-30 09:56:16', 't@mail', ''),
+(46, 'NRW1', 'Norwich', 'paruh pendek, punggung lebar dan pendek, sayap dan ekor pendek', 3000000, 1, 3000000, '2016-12-31 07:00:44', 't@mail', '');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
