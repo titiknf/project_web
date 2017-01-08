@@ -273,6 +273,9 @@
                     else if ( $page == "updateMember"){
                         include "pages/pagesAdmin/updateMember.php";
                     }
+                    else if ( $page == "about"){
+                        include "pages/about.php";
+                    }
 				?>
 
 
@@ -407,19 +410,19 @@
                 <div class="col-lg-12">
                     <ul class="list-inline">
                         <li>
-                            <a href="#">Home</a>
+                            <a href="index.php?pg=home">Home</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="#about">About</a>
+                            <a href="index.php?pg=about">About</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="#services">Services</a>
+                            <a href="index.php?pg=caraPemesanan">Services</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="#contact">Contact</a>
+                            <a href="github.com/titiknf">Contact</a>
                         </li>
                     </ul>
                     <p class="copyright text-muted small">Copyright &copy; <a href="">Tifsny</a> 2016. All Rights Reserved</p>

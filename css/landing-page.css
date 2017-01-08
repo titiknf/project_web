@@ -22,10 +22,11 @@ h6 {
 }
 
 .topnav {
+    /*background-color: #00ffff;*/
     font-size: 18px; 
 }
 
-.lead {
+.lead {;
     font-size: 30px;
     font-weight: 400;
 }
@@ -37,6 +38,7 @@ h6 {
     color: #black;
 	list-style-image:url(../../Unnamed%20Site%204/logo.png);
 	background-color: #FF9840;
+    background-image: 
     /*#FF8473;ini merah jambu*/
     background-size: cover;
 }
@@ -120,7 +122,7 @@ h6 {
 
 .banner {
     padding: 100px 0;
-    color: #ff9840;
+    color: #00ffff;
     background: url(../img/pet-city1.jpg) no-repeat center center;
     background-size: cover;
 }
@@ -228,7 +230,7 @@ a{
 }
 
 #pc-menu ul li a{
-	background-color: #34d182;
+	background-color: #00ffff;
 	border: 1px #ff7600 solid;
 	box-shadow:0px 0px 0px  #000;	
 }
